@@ -22,7 +22,7 @@
     .navbar {
       background: rgba(10, 5, 25, 0.9);
       backdrop-filter: blur(15px);
-      padding: 1rem 2rem;
+      padding: 0.8rem 1.5rem;
       box-shadow: 0 0 40px rgba(147, 51, 234, 0.4);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       position: sticky;
@@ -32,7 +32,7 @@
 
     .navbar-brand {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: #fff;
       text-shadow: 0 0 15px #9333ea, 0 0 25px #3b82f6;
@@ -47,9 +47,10 @@
       font-family: 'Orbitron', sans-serif;
       color: #fff !important;
       font-weight: 600;
-      margin-left: 1.8rem;
+      margin-left: 1rem;
       text-shadow: 0 0 12px rgba(147, 51, 234, 0.5);
       transition: color 0.3s ease, text-shadow 0.3s ease;
+      font-size: 1rem;
     }
 
     .nav-link:hover {
@@ -73,16 +74,16 @@
 
     .hero-text {
       text-align: center;
-      margin: 3rem 0 4rem 0;
+      margin: 2rem 0 3rem 0;
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       font-weight: 700;
       background: linear-gradient(90deg, #ff6a00, #ee0979, #00c9ff, #9333ea);
       background-size: 300% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shine 5s linear infinite;
-      text-shadow: 0 0 25px rgba(255, 255, 255,0.3);
+      text-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
     }
 
     @keyframes shine {
@@ -93,9 +94,9 @@
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
-      font-size: 3rem;
+      font-size: 2rem;
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       background: linear-gradient(90deg, #9333ea, #3b82f6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -103,8 +104,8 @@
     }
 
     .container {
-      padding: 0 1.5rem 5rem 1.5rem;
-      max-width: 1200px;
+      padding: 0 1rem 3rem 1rem;
+      max-width: 1400px;
     }
 
     .sticker-card {
@@ -120,16 +121,17 @@
     }
 
     .sticker-card:hover {
-      transform: translateY(-14px) scale(1.03);
+      transform: translateY(-10px) scale(1.02);
       box-shadow: 0 0 70px rgba(147, 51, 234, 0.8);
       z-index: 10;
     }
 
     .card-img-top {
-      height: 230px;
+      height: 180px;
       object-fit: cover;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       transition: transform 0.5s ease;
+      width: 100%;
     }
 
     .sticker-card:hover .card-img-top {
@@ -139,24 +141,24 @@
     .card-body {
       background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
-      padding: 1.5rem 1.2rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 280px;
+      min-height: 260px;
     }
 
     .card-title {
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       margin-bottom: 0.5rem;
       color: #e0d9ff;
       text-shadow: 0 0 10px #9333ea;
     }
 
     .card-text {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-bottom: 0.5rem;
       color: #ddd;
       line-height: 1.3;
@@ -166,14 +168,15 @@
       background: linear-gradient(90deg, #9333ea, #3b82f6);
       color: #fff;
       border: none;
-      padding: 12px 28px;
-      border-radius: 30px;
+      padding: 8px 20px;
+      border-radius: 20px;
       font-weight: 700;
       font-family: 'Orbitron', sans-serif;
       transition: all 0.3s ease;
       text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
       align-self: center;
       box-shadow: 0 0 20px rgba(147, 51, 234, 0.7);
+      font-size: 0.9rem;
     }
 
     .deal-btn:hover {
@@ -183,18 +186,18 @@
 
     .star-rating {
       color: #ffd700;
-      font-size: 1.2rem;
+      font-size: 1rem;
       text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     #telegram-contact {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 20px;
+      right: 20px;
       background: linear-gradient(45deg, #0088cc, #005f99);
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       box-shadow: 0 0 20px #0088cc;
       cursor: pointer;
@@ -212,7 +215,7 @@
 
     #telegram-contact i {
       color: white;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
     }
 
@@ -240,6 +243,7 @@
       transition: all 0.3s ease;
       align-self: center;
       box-shadow: 0 0 15px rgba(220, 53, 69, 0.7);
+      font-size: 0.9rem;
     }
 
     .delete-btn:hover {
@@ -248,24 +252,101 @@
     }
 
     footer p {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-family: 'Orbitron', sans-serif;
       text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
     }
 
-    @media (max-width: 576px) {
+    /* Mobile-specific styles */
+    @media (max-width: 768px) {
       .hero-text {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin: 1.5rem 0 2rem;
       }
+
       h1 {
-        font-size: 2.4rem;
-        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
       }
+
+      .navbar {
+        padding: 0.5rem 1rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.5rem;
+      }
+
+      .nav-link {
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+      }
+
+      .container {
+        padding: 0 0.5rem 2rem;
+      }
+
+      .sticker-card {
+        margin-bottom: 1rem;
+      }
+
+      .card-img-top {
+        height: 150px;
+      }
+
       .card-body {
-        height: auto;
+        min-height: 220px;
+        padding: 0.8rem;
       }
+
+      .card-title {
+        font-size: 1rem;
+      }
+
+      .card-text {
+        font-size: 0.8rem;
+      }
+
+      .deal-btn {
+        padding: 6px 16px;
+        font-size: 0.8rem;
+      }
+
+      .delete-btn {
+        padding: 6px 16px;
+        font-size: 0.8rem;
+      }
+
+      .star-rating {
+        font-size: 0.9rem;
+      }
+
+      #telegram-contact {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+      }
+
+      #telegram-contact i {
+        font-size: 1.3rem;
+      }
+
       footer p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .row-cols-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .sticker-card {
+        width: 100%;
+        max-width: 100%;
       }
     }
   </style>
@@ -290,9 +371,9 @@
   <main class="container" id="home">
     <div class="hero-text">We Are The Best</div>
     <h1>🔥 Featured Stickers 🔥</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-4" id="sticker-gallery"></div>
+    <div class="row row-cols-1 row-cols-md-3 g-3" id="sticker-gallery"></div>
 
-    <div class="text-center my-4" id="add-sticker-btn" style="display: none;">
+    <div class="text-center my-3" id="add-sticker-btn" style="display: none;">
       <button class="btn btn-success" onclick="addSticker()" aria-label="Add new sticker">Add Sticker</button>
     </div>
   </main>
@@ -301,7 +382,7 @@
     <i class="fab fa-telegram-plane"></i>
   </div>
 
-  <footer class="text-center mt-5 mb-3">
+  <footer class="text-center mt-4 mb-3">
     <p>Thanks for visiting FireSticker Shop!</p>
   </footer>
 
@@ -432,7 +513,7 @@
         col.innerHTML = `
           <div class="card sticker-card h-100" tabindex="0" aria-label="${ad.title}, priced at ${ad.price}">
             <img src="${ad.image}" class="card-img-top" alt="${ad.title}" 
-                 onerror="this.src='https://via.placeholder.com/300x230?text=${encodeURIComponent(ad.title)}'">
+                 onerror="this.src='https://via.placeholder.com/300x150?text=${encodeURIComponent(ad.title)}'">
             <div class="card-body text-center d-flex flex-column justify-content-between">
               <h5 class="card-title">${ad.title}</h5>
               <p class="card-text mb-2">Price: <strong>${ad.price}</strong></p>
@@ -467,7 +548,7 @@
       col.innerHTML = `
         <div class="card sticker-card editable-card h-100" tabindex="0" 
              aria-label="Editable sticker ${stickerCount}">
-          <img src="https://via.placeholder.com/300x230?text=Sticker+${stickerCount}" 
+          <img src="https://via.placeholder.com/300x150?text=Sticker+${stickerCount}" 
                class="card-img-top" alt="Sticker ${stickerCount}">
           <div class="card-body text-center d-flex flex-column justify-content-between">
             <h5 class="card-title" contenteditable="true" 
