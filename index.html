@@ -216,7 +216,7 @@
     #telegram-contact i {
       color: white;
       font-size: 1.5rem;
-      filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
     }
 
     .editable-card .card-title[contenteditable],
@@ -388,7 +388,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    const TELEGRAM_USERNAME = "yourtelegramusername"; // Replace with actual Telegram username
+    const TELEGRAM_USERNAME = "@GameChangerzzzz"; // Telegram username
     let stickerCount = 0;
     const isAdmin = false; // Replace with actual authentication check
 
@@ -582,7 +582,7 @@
         contactDiv.className = 'col-12 text-center my-3';
         contactDiv.innerHTML = `<a href="contact.html" class="btn btn-warning btn-lg" 
                                 aria-label="Contact Us">Contact Us</a>`;
-        gallery.appendChild(contactDiv);
+        gallery.appendChild(col);
       }
     }
 
@@ -636,7 +636,8 @@
         alert('Please configure a valid Telegram username');
         return;
       }
-      window.open(`https://t.me/${GameChangerzzzz}`, '_blank');
+      const username = TELEGRAM_USERNAME.startsWith('@') ? TELEGRAM_USERNAME.slice(1) : TELEGRAM_USERNAME;
+      window.open(`https://t.me/${username}`, '_blank');
     }
 
     document.addEventListener('DOMContentLoaded', initializeGallery);
