@@ -378,7 +378,7 @@
     </div>
   </main>
 
-  <div id="telegram-contact" title="Contact us on Telegram" onclick="openTelegram()" aria-label="Contact us on Telegram">
+  <div id="telegram-contact" title="Contact us on Telegram @GameChangerzzzz" onclick="openTelegram()" aria-label="Contact us on Telegram">
     <i class="fab fa-telegram-plane"></i>
   </div>
 
@@ -632,10 +632,6 @@
     }
 
     function openTelegram() {
-      if (!TELEGRAM_USERNAME || TELEGRAM_USERNAME === "@GameChangerzzzz") {
-        alert('Please configure a valid Telegram username');
-        return;
-      }
       const username = TELEGRAM_USERNAME.startsWith('@') ? TELEGRAM_USERNAME.slice(1) : TELEGRAM_USERNAME;
       window.open(`https://t.me/${username}`, '_blank');
     }
