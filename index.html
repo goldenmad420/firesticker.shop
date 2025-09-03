@@ -17,13 +17,33 @@
       padding: 0;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      position: relative;
       animation: bgGlow 30s ease-in-out infinite alternate;
     }
 
     @keyframes bgGlow {
       0% { background: linear-gradient(135deg, #2a002a 0%, #3a0055 50%, #5a007a 100%); }
       100% { background: linear-gradient(135deg, #4a003a 0%, #6a0066 50%, #8a0099 100%); }
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(255,105,180,0.4);
+    }
+    .navbar-brand {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      color: #ff69b4 !important;
+      text-shadow: 0 0 10px #ff1493;
+    }
+    .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    .nav-link:hover {
+      color: #ff69b4 !important;
     }
 
     .hero-text {
@@ -66,7 +86,6 @@
       backdrop-filter: blur(15px);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-
     .girl-card:hover {
       transform: translateY(-6px) scale(1.02);
       box-shadow: 0 0 60px rgba(255,20,147,0.8), 0 0 30px rgba(255,105,180,0.7);
@@ -79,7 +98,6 @@
       transition: transform 0.5s ease;
       width: 100%;
     }
-
     .girl-card:hover .card-img-top {
       transform: scale(1.05);
     }
@@ -90,7 +108,6 @@
       padding: 0.75rem;
       text-align: center;
     }
-
     .card-title {
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
@@ -99,7 +116,6 @@
       color: #ff69b4;
       text-shadow: 0 0 10px #ff1493;
     }
-
     .deal-btn {
       background: linear-gradient(90deg, #ff69b4, #ff1493);
       color: #fff;
@@ -112,56 +128,117 @@
       text-decoration: none;
       font-size: 0.85rem;
     }
-
     .deal-btn:hover {
       background: linear-gradient(90deg, #ff1493, #ff69b4);
     }
 
-    #download-popup {
+    /* Call Popup */
+    #call-popup {
       display: none;
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: rgba(255,20,147,0.9);
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 0 40px rgba(255,20,147,0.7);
-      z-index: 2000;
+      background: rgba(0,0,0,0.85);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 50px rgba(255,20,147,0.9);
+      z-index: 3000;
+      text-align: center;
+      color: #fff;
+      animation: pulsePopup 1.5s infinite;
+    }
+    @keyframes pulsePopup {
+      0% { box-shadow: 0 0 20px rgba(255,20,147,0.6); }
+      100% { box-shadow: 0 0 50px rgba(255,20,147,1); }
+    }
+    #call-popup .icon {
+      font-size: 3rem;
+      color: #ff69b4;
+      margin-bottom: 15px;
+      animation: ring 1s infinite;
+    }
+    @keyframes ring {
+      0% { transform: rotate(0deg); }
+      20% { transform: rotate(15deg); }
+      40% { transform: rotate(-15deg); }
+      60% { transform: rotate(10deg); }
+      80% { transform: rotate(-10deg); }
+      100% { transform: rotate(0deg); }
+    }
+    #call-popup h3 {
+      margin-bottom: 10px;
+      font-family: 'Orbitron', sans-serif;
+      color: #ff69b4;
+    }
+    .popup-btn {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .accept-btn {
+      background: #28a745;
+      color: white;
+    }
+    .accept-btn:hover { background: #218838; }
+    .decline-btn {
+      background: #dc3545;
+      color: white;
+    }
+    .decline-btn:hover { background: #c82333; }
+
+    /* Help section */
+    #help {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: rgba(0,0,0,0.4);
+      border-top: 2px solid rgba(255,20,147,0.6);
       text-align: center;
     }
-
-    #download-popup button {
-      background: #fff;
-      color: #ff1493;
-      font-weight: 700;
-      border: none;
-      padding: 10px 25px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    #download-popup button:hover {
-      background: #ff69b4;
-      color: #fff;
+    #help h4 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff69b4;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">HotChat</a>
+      <div class="ms-auto">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#help" class="nav-link">Customer Help</a>
+      </div>
+    </div>
+  </nav>
+
   <main class="container mt-4">
     <div class="hero-text">🔥 HOTCHAT WAITING FOR YOU! 🔥</div>
     <h1>Featured Hot Girls</h1>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="girls-gallery"></div>
   </main>
 
-  <div id="download-popup">
-    <h3>Download Your Hot Girl App Now!</h3>
-    <p>Join the fun with HotChat!</p>
-    <a href="https://www.dropbox.com/scl/fi/oi81mdjskxbnp9vxpt1pb/Hotchat.apk?rlkey=te7v4r75yk11u3e7cqrn1m5rk&st=5szlpoeu&dl=1" class="btn btn-light fw-bold">Download Now</a>
-    <br><br>
-    <button onclick="closeDownload()">Close</button>
+  <!-- Call Popup -->
+  <div id="call-popup">
+    <div class="icon"><i class="fas fa-phone-volume"></i></div>
+    <h3>Hot Girl is calling you...</h3>
+    <p>Hurry to chat now!</p>
+    <button class="popup-btn accept-btn" onclick="downloadApp()">Accept</button>
+    <button class="popup-btn decline-btn" onclick="closeCallPopup()">Decline</button>
   </div>
+
+  <!-- Help Section -->
+  <section id="help">
+    <h4>Need Help?</h4>
+    <p>Our HotChat support team is available 24/7.</p>
+    <a href="mailto:support@hotchat.com" class="btn btn-light fw-bold">Contact Support</a>
+  </section>
 
   <script>
     const girls = [
@@ -193,16 +270,20 @@
       });
     }
 
-    function showDownloadPopup(){
-      document.getElementById('download-popup').style.display='block';
+    function showCallPopup(){
+      document.getElementById('call-popup').style.display='block';
     }
-    function closeDownload(){
-      document.getElementById('download-popup').style.display='none';
+    function closeCallPopup(){
+      document.getElementById('call-popup').style.display='none';
+    }
+    function downloadApp(){
+      window.location.href="https://www.dropbox.com/scl/fi/oi81mdjskxbnp9vxpt1pb/Hotchat.apk?rlkey=te7v4r75yk11u3e7cqrn1m5rk&st=5szlpoeu&dl=1";
+      closeCallPopup();
     }
 
     window.addEventListener('DOMContentLoaded',()=>{
       initializeGallery();
-      setTimeout(showDownloadPopup,2500);
+      setTimeout(showCallPopup,2500);
     });
   </script>
 </body>
