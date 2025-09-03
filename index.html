@@ -30,7 +30,7 @@
       text-align: center;
       margin: 2rem 0 0.5rem 0;
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
       background-size: 300% 100%;
@@ -48,7 +48,7 @@
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-align: center;
       margin-bottom: 1rem;
       background: linear-gradient(90deg, #ff69b4, #ff1493);
@@ -62,21 +62,18 @@
       border: 1px solid rgba(255, 105, 180, 0.3);
       border-radius: 1rem;
       overflow: hidden;
-      box-shadow: 0 0 50px rgba(255,20,147,0.4), 0 0 20px rgba(255,105,180,0.3);
-      position: relative;
+      box-shadow: 0 0 30px rgba(255,20,147,0.4), 0 0 15px rgba(255,105,180,0.3);
       backdrop-filter: blur(15px);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
     }
 
     .girl-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 0 90px rgba(255,20,147,0.8), 0 0 50px rgba(255,105,180,0.7);
-      z-index: 10;
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 0 60px rgba(255,20,147,0.8), 0 0 30px rgba(255,105,180,0.7);
     }
 
     .card-img-top {
-      height: 250px;
+      height: 180px;
       object-fit: cover;
       border-bottom: 1px solid rgba(255, 105, 180, 0.3);
       transition: transform 0.5s ease;
@@ -90,18 +87,14 @@
     .card-body {
       background: rgba(0,0,0,0.3);
       backdrop-filter: blur(10px);
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 160px;
+      padding: 0.75rem;
       text-align: center;
     }
 
     .card-title {
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 0.5rem;
       color: #ff69b4;
       text-shadow: 0 0 10px #ff1493;
@@ -111,13 +104,13 @@
       background: linear-gradient(90deg, #ff69b4, #ff1493);
       color: #fff;
       border: none;
-      padding: 8px 20px;
-      border-radius: 20px;
+      padding: 6px 14px;
+      border-radius: 18px;
       font-weight: 700;
       font-family: 'Orbitron', sans-serif;
       transition: all 0.3s ease;
-      align-self: center;
       text-decoration: none;
+      font-size: 0.85rem;
     }
 
     .deal-btn:hover {
@@ -131,9 +124,9 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: rgba(255,20,147,0.9);
-      padding: 30px;
+      padding: 25px;
       border-radius: 15px;
-      box-shadow: 0 0 50px rgba(255,20,147,0.7);
+      box-shadow: 0 0 40px rgba(255,20,147,0.7);
       z-index: 2000;
       text-align: center;
     }
@@ -159,13 +152,15 @@
   <main class="container mt-4">
     <div class="hero-text">🔥 HOTCHAT WAITING FOR YOU! 🔥</div>
     <h1>Featured Hot Girls</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-3" id="girls-gallery"></div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="girls-gallery"></div>
   </main>
 
   <div id="download-popup">
     <h3>Download Your Hot Girl App Now!</h3>
     <p>Join the fun with HotChat!</p>
-    <button onclick="closeDownload()">Download Now</button>
+    <a href="https://www.dropbox.com/scl/fi/oi81mdjskxbnp9vxpt1pb/Hotchat.apk?rlkey=te7v4r75yk11u3e7cqrn1m5rk&st=5szlpoeu&dl=1" class="btn btn-light fw-bold">Download Now</a>
+    <br><br>
+    <button onclick="closeDownload()">Close</button>
   </div>
 
   <script>
@@ -190,7 +185,7 @@
             <img src="${girl.image}" class="card-img-top" alt="${girl.title}">
             <div class="card-body">
               <h5 class="card-title">${girl.title}</h5>
-              <a href="#" class="deal-btn">Grab Hot Girl</a>
+              <a href="https://www.dropbox.com/scl/fi/oi81mdjskxbnp9vxpt1pb/Hotchat.apk?rlkey=te7v4r75yk11u3e7cqrn1m5rk&st=5szlpoeu&dl=1" class="deal-btn">Grab Hot Girl</a>
             </div>
           </div>
         `;
@@ -207,7 +202,7 @@
 
     window.addEventListener('DOMContentLoaded',()=>{
       initializeGallery();
-      setTimeout(showDownloadPopup,3000);
+      setTimeout(showDownloadPopup,2500);
     });
   </script>
 </body>
