@@ -77,11 +77,12 @@
     .girl-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 0 60px rgba(255,20,147,0.8), 0 0 30px rgba(255,105,180,0.7); }
 
     .card-img-top {
-      height: 180px; object-fit: cover; width: 100%;
+      width: 100%;
+      height: 220px;        /* fixed box height */
+      object-fit: contain;  /* scale image, no crop */
+      background: #000;     /* black bars for empty space */
       border-bottom: 1px solid rgba(255, 105, 180, 0.3);
-      transition: transform 0.5s ease;
     }
-    .girl-card:hover .card-img-top { transform: scale(1.05); }
 
     .card-body { background: rgba(0,0,0,0.3); backdrop-filter: blur(10px); padding: 0.75rem; text-align: center; }
     .card-title { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: #ff69b4; text-shadow: 0 0 10px #ff1493; }
@@ -96,6 +97,7 @@
     }
     .deal-btn:hover { background: linear-gradient(90deg, #ff1493, #ff69b4); }
 
+    /* Call Popup */
     #call-popup {
       display: none; position: fixed; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
@@ -113,9 +115,11 @@
     .accept-btn { background: #28a745; color: white; } .accept-btn:hover { background: #218838; }
     .decline-btn { background: #dc3545; color: white; } .decline-btn:hover { background: #c82333; }
 
+    /* Help section */
     #help { margin-top: 3rem; padding: 2rem; background: rgba(0,0,0,0.4); border-top: 2px solid rgba(255,20,147,0.6); text-align: center; }
     #help h4 { font-family: 'Orbitron', sans-serif; color: #ff69b4; margin-bottom: 1rem; }
 
+    /* Download Section */
     #download-section { display: none; margin: 3rem auto; text-align: center; }
     #download-section h3 { font-family: 'Orbitron', sans-serif; color: #ff69b4; text-shadow: 0 0 15px #ff1493; margin-bottom: 1rem; }
     .download-btn {
@@ -131,6 +135,7 @@
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="#">HotChat</a>
@@ -146,12 +151,14 @@
     <h1>Featured Hot Girls</h1>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="girls-gallery"></div>
 
+    <!-- Hidden Download Section -->
     <div id="download-section">
       <h3>📲 To chat with HotGirls, please use our official app</h3>
       <a href="https://tinyurl.com/hotchatv34" download class="download-btn">⬇️ Download Now</a>
     </div>
   </main>
 
+  <!-- Call Popup -->
   <div id="call-popup">
     <div class="icon"><i class="fas fa-phone-volume"></i></div>
     <h3>Hot Girl is calling you...</h3>
@@ -160,6 +167,7 @@
     <button class="popup-btn decline-btn" onclick="closeCallPopup()">Decline</button>
   </div>
 
+  <!-- Help Section -->
   <section id="help">
     <h4>Need Help?</h4>
     <p>Our HotChat support team is available 24/7.</p>
@@ -173,9 +181,9 @@
       {title:"Sarika, 23",image:"https://imgur.com/69OvRlR.jpg"},
       {title:"Shivani, 26",image:"https://imgur.com/aDdXJ4t.jpg"},
       {title:"Chayana, 24",image:"https://imgur.com/QrECypd.jpg"},
-      {title:"Priya, 20",image:"https://imgur.com/cZ61YoR.jpg"},
-      {title:"Anjali, 25",image:"https://imgur.com/D0ZkLxP.jpg"},
-      {title:"Nisha, 22",image:"https://imgur.com/Hr8mtfA.jpg"}
+      {title:"Pooja, 20",image:"https://imgur.com/cZ61YoR.jpg"},
+      {title:"Simran, 25",image:"https://imgur.com/D0ZkLxP.jpg"},
+      {title:"Kajal, 22",image:"https://imgur.com/Hr8mtfA.jpg"}
     ];
 
     function initializeGallery() {
