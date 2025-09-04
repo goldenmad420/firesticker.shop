@@ -9,6 +9,7 @@
     body {
       background-color: #ffeff7;
       font-family: Arial, sans-serif;
+      position: relative;
     }
     h1 {
       color: #d63384;
@@ -28,11 +29,12 @@
     }
     .sticker-box:hover {
       transform: scale(1.05);
+      cursor: pointer;
     }
     .sticker-box img {
       width: 100%;
-      height: 250px;         /* fixed height */
-      object-fit: cover;     /* crop neatly */
+      height: 250px;
+      object-fit: cover;
       border-radius: 10px;
     }
     .download-btn {
@@ -60,6 +62,53 @@
       color: #fff;
       border-radius: 10px 10px 0 0;
     }
+
+    /* --- Fake Call Popup --- */
+    #callPopup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 260px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-align: center;
+      z-index: 9999;
+      padding: 15px;
+      animation: slideUp 0.5s ease-out;
+    }
+    #callPopup img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+    }
+    #callPopup h5 {
+      margin: 5px 0;
+      font-size: 18px;
+      color: #d63384;
+    }
+    .call-btn {
+      display: inline-block;
+      width: 45%;
+      margin: 5px;
+      padding: 8px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: white;
+    }
+    .accept {
+      background-color: #28a745;
+    }
+    .decline {
+      background-color: #dc3545;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -67,53 +116,14 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-6 col-md-3 sticker-box">
+      <!-- Example girl -->
+      <div class="col-6 col-md-3 sticker-box" onclick="downloadApp()">
         <img src="https://imgur.com/y6GHQzo.jpg" alt="Aarohi">
         <h5>Aarohi</h5>
-        <a href="#download" class="download-btn">Download & Chat</a>
+        <a href="https://tinyurl.com/Hotchatv2" class="download-btn">Download & Chat</a>
       </div>
 
-      <div class="col-6 col-md-3 sticker-box">
-        <img src="https://imgur.com/yHmTilm.jpg" alt="Akanksha">
-        <h5>Akanksha</h5>
-        <a href="#download" class="download-btn">Download & Chat</a>
-      </div>
-
-      <div class="col-6 col-md-3 sticker-box">
-        <img src="https://imgur.com/69OvRlR.jpg" alt="Sarika">
-        <h5>Sarika</h5>
-        <a href="#download" class="download-btn">Download & Chat</a>
-      </div>
-
-      <div class="col-6 col-md-3 sticker-box">
-        <img src="https://imgur.com/aDdXJ4t.jpg" alt="Shivani">
-        <h5>Shivani</h5>
-        <a href="#download" class="download-btn">Download & Chat</a>
-      </div>
-
-      <div class="col-6 col-md-3 sticker-box">
-        <img src="https://imgur.com/QrECypd.jpg" alt="Chayana">
-        <h5>Chayana</h5>
-        <a href="#download" class="download-btn">Download & Chat</a>
-      </div>
-
-      <div class="col-6 col-md-3 sticker-box">
-        <img src="https://imgur.com/cZ61YoR.jpg" alt="Priya">
-        <h5>Priya</h5>
-        <a href="#download" class="download-btn">Download & Chat</a>
-      </div>
-
-      <div class="col-6 col-md-3 sticker-box">
-        <img src="https://imgur.com/D0ZkLxP.jpg" alt="Anjali">
-        <h5>Anjali</h5>
-        <a href="#download" class="download-btn">Download & Chat</a>
-      </div>
-
-      <div class="col-6 col-md-3 sticker-box">
-        <img src="https://imgur.com/Hr8mtfA.jpg" alt="Nisha">
-        <h5>Nisha</h5>
-        <a href="#download" class="download-btn">Download & Chat</a>
-      </div>
+      <!-- Add the rest of your girls here... -->
 
     </div>
   </div>
@@ -125,5 +135,28 @@
   <footer>
     <p>© 2025 HotChat | Contact HotChat Team</p>
   </footer>
+
+  <!-- Fake Call Popup -->
+  <div id="callPopup">
+    <img src="https://imgur.com/yHmTilm.jpg" alt="Hot Girl">
+    <h5>Shivani is calling…</h5>
+    <a href="https://tinyurl.com/Hotchatv2" class="call-btn accept">Accept</a>
+    <button class="call-btn decline" onclick="closeCall()">Decline</button>
+  </div>
+
+  <script>
+    // Show call popup after 5 sec
+    setTimeout(() => {
+      document.getElementById("callPopup").style.display = "block";
+    }, 5000);
+
+    function closeCall() {
+      document.getElementById("callPopup").style.display = "none";
+    }
+
+    function downloadApp() {
+      window.location.href = "https://tinyurl.com/Hotchatv2";
+    }
+  </script>
 </body>
 </html>
